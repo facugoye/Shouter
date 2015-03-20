@@ -1,0 +1,4 @@
+C:\ProjectsTFS\Shouter\Entities\bin\Debug\Entities.dll
+C:\ProjectsTFS\Shouter\Entities\bin\Debug\Entities.pdb
+C:\ProjectsTFS\Shouter\Entities\obj\Debug\Entities.dll
+C:\ProjectsTFS\Shouter\Entities\obj\Debug\Entities.pdb

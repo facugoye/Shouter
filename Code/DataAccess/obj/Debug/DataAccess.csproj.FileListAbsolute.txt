@@ -1,0 +1,9 @@
+C:\ProjectsTFS\Shouter\DataAccess\bin\Debug\DataAccess.dll
+C:\ProjectsTFS\Shouter\DataAccess\bin\Debug\DataAccess.pdb
+C:\ProjectsTFS\Shouter\DataAccess\bin\Debug\Entities.dll
+C:\ProjectsTFS\Shouter\DataAccess\bin\Debug\MongoDB.Bson.dll
+C:\ProjectsTFS\Shouter\DataAccess\bin\Debug\MongoDB.Driver.dll
+C:\ProjectsTFS\Shouter\DataAccess\bin\Debug\Entities.pdb
+C:\ProjectsTFS\Shouter\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\ProjectsTFS\Shouter\DataAccess\obj\Debug\DataAccess.dll
+C:\ProjectsTFS\Shouter\DataAccess\obj\Debug\DataAccess.pdb

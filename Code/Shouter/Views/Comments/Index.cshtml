@@ -1,0 +1,81 @@
+﻿@model Shouter.Models.CommentsViewModel
+@using Shouter.Models
+@using Shouter.Globalization
+@{
+    ViewBag.Title = Labels.Comments;
+}
+
+<h2>@Labels.Comments</h2>
+
+<div class="jumbotron text-center panel panel-primary">
+    @using (Ajax.BeginForm(
+        "InsertNewComment",
+        null,
+        new AjaxOptions()
+        {
+            InsertionMode = InsertionMode.InsertBefore,
+            UpdateTargetId = "comments-list",
+            OnSuccess = "clearForm"
+        },
+        new {
+            @id = "newCommentForm", 
+            @class = "form-inline" 
+        }))
+    {
+        Html.RenderPartial("CommentForm", new CommentViewModel());
+        <button class="btn btn-default" type="submit">@Labels.Send</button>
+    }
+</div>
+
+<div id="comments-list"></div>
+@foreach (var item in (@Model.Comments))
+{
+    Html.RenderPartial("CommentItem", item);
+}
+
+
+<script>
+    var times = 0;
+    var humanizeDates = function () {
+        times++;
+        $('.humanize-datetime').each(function () {
+            var self = $(this);
+            var datetimeStr = self.attr('data-datetime');
+            var dateTime = new Date(datetimeStr);
+            var now = new Date();
+
+            var dif = now - dateTime;
+
+            var seconds = Math.round(dif / 1000);
+            var mins = Math.round(seconds / 60);
+            var hours = Math.round(mins / 60);
+            var days = Math.round(hours / 24);
+
+            var humnizedString =
+                seconds < 5 ? " @Labels.Now.ToLower()" :
+                seconds < 60 ? seconds + " @Labels.SecondsAgo.ToLower()" :
+                mins < 60 ? mins + " @Labels.MinutesAgo.ToLower()" :
+                hours < 24 ? hours + " @Labels.HoursAgo.ToLower()" :
+                days === 1 ? " @Labels.Yesterday.ToLower()" :
+                dateTime.toLocaleString();
+
+            self.text(humnizedString);
+        });
+
+        //Repetciones Infinitas
+        repeat = times + 1;
+
+        if (times >= repeat) {
+            clearInterval(refreshDate);
+            times = 0;
+        }
+    };
+
+    humanizeDates();
+    var refreshDate = setInterval(humanizeDates, 60000 / 4);
+
+    //var clearForm(){
+    //    $("#newCommentForm").
+    //}
+
+</script>

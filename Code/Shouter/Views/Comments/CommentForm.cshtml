@@ -1,0 +1,13 @@
+﻿@model Shouter.Models.CommentViewModel
+@using Shouter.Globalization
+
+<div class="form-gxroup">
+    @Html.EditorFor(m => m.Comment, new
+            {
+                @htmlAttributes = new
+                {
+                    @class = "form-control",
+                    @placeholder = @Labels.InsertYourComment
+                }
+            })
+</div>

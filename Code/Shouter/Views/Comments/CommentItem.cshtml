@@ -1,0 +1,12 @@
+﻿@model Shouter.Models.CommentViewModel
+@using Shouter.Globalization
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        @Html.DisplayFor(m => m.User)
+        <div class="pull-right humanize-datetime" data-datetime="@Model.Date.ToLocalTime().ToString("MM/dd/yyyy HH:mm:ss")">@Labels.Now</div>
+    </div>
+    <div class="panel-body">
+        @Html.DisplayFor(m => m.Comment)
+    </div>
+</div>
